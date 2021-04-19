@@ -124,7 +124,7 @@ Our settings is based on [DevilBox (Configure Xdebug)](https://devilbox.readthed
 
 1. Uncomment all Xdebug settings from `docker/xxx-devilbox-default-php.ini`
 2. [Add host address alias](https://devilbox.readthedocs.io/en/latest/howto/xdebug/host-address-alias-an-mac.html#howto-host-address-alias-on-mac), eg on MacOS `sudo ifconfig lo0 alias 10.254.254.254`
-3. Restart docker with docker-compose stop escola_lms_app && docker-compose rm escola_lms_app && docker-compose up -d
+3. Restart docker with `docker-compose stop escola_lms_app && docker-compose rm escola_lms_app && docker-compose up -d`
 4. [Install default Xdebug debugging tools](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 5. Add at least one breakpoint to your package
 6. Select option `Listen for Xdebug` from IDE debugger
