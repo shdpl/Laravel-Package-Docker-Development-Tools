@@ -13,6 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            \EscolaLms\HeadlessH5P\Database\Seeders\ContentLibrarySeeder::class,
+            \EscolaLms\Courses\Database\Seeders\CoursesSeeder::class
+        ]);
         // \App\Models\User::factory(10)->create();
     }
 }

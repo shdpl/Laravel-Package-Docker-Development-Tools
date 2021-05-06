@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @OA\Info(title="Escola LMS API")
+ */
+
 return [
     'default' => 'default',
     'documentations' => [
@@ -34,8 +38,8 @@ return [
                  * Absolute paths to directory containing the swagger annotations are stored.
                 */
                 'annotations' => [
-                    base_path('vendor/escolalms/headless-h5p/src'),
-                    //base_path('app')
+                    base_path("app"),
+                    base_path("vendor/escolalms/courses/src")
                 ],
 
             ],

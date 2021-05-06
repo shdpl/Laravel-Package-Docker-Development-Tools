@@ -6,7 +6,7 @@ Includes folders
 
 - `host` default Laravel instance
 - `docker` config files
-- `package` folders for each of packages
+- `packages` folder that includes each of packages
 
 ## Launching
 
@@ -25,35 +25,9 @@ Enter bash by calling `docker-compose exec escola_lms_app bash`, then lanuch any
 
 Repeat those steps for each package
 
-1. Clone your package to a folder inside this repo, eg `package` (`git clone XXX package`). Add your folder to `.gitignore`
-2. Add folder to Docker volumes, amend `docker-compose.yml`
+1. Clone your package to a folder inside this repo, in `packages` folder (`git clone XXX package`). Add your folder to `.gitignore`
 
-Before:
-
-```yaml
-escola_lms_app:
-  image: escolasoft1/laravel-prod-docker:fpm
-  command: bash -c "/etc/init.d/cron start && php-fpm -F"
-  volumes:
-    - ./host:/var/www/html
-    - ./docker/php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
-    - ./docker/xxx-devilbox-default-php.ini:/usr/local/etc/php/conf.d/xxx-devilbox-default-php.ini
-```
-
-After:
-
-```yaml
-escola_lms_app:
-  image: escolasoft1/laravel-prod-docker:fpm
-  command: bash -c "/etc/init.d/cron start && php-fpm -F"
-  volumes:
-    - ./host:/var/www/html
-    - ./docker/php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
-    - ./docker/xxx-devilbox-default-php.ini:/usr/local/etc/php/conf.d/xxx-devilbox-default-php.ini
-    - ./package:/var/www/package
-```
-
-3. Amend Host Laravel `host/composer.json`
+2. Amend Host Laravel `host/composer.json`
 
 Before:
 
@@ -68,15 +42,14 @@ After:
 "repositories": {
     "escolalms/headless-h5p": {
         "type": "path",
-        "url": "../package"
+        "url": "../packages/headless-h5p"
     }
 }
 ```
 
 Note that name (`escolalms/headless-h5p` in example above) **MUST** match one you have in `package/composer.json`
 
-4. Restart docker `docker-compose stop escola_lms_app`, `docker-compose up escola_lms_app -d`
-5. Enter bash (instruction above), then add you packge with `composer require escolalms/headless-h5p`
+3. Enter bash (instruction above), then add you packge with `composer require escolalms/headless-h5p`
 
 That's it - now you have laravel working with docker that is using package from other folder that is `git` maintained.
 

@@ -22,7 +22,7 @@ services:
     command: bash -c "/etc/init.d/cron start && php-fpm -F"
     volumes:
       - ./host:/var/www/html
-      - ./package:/var/www/package
+      - ./packages:/var/www/packages
       - ./docker/php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
       - ./docker/xxx-devilbox-default-php.ini:/usr/local/etc/php/conf.d/xxx-devilbox-default-php.ini
 

@@ -1,1 +1,4 @@
-package
+packages/*
+!packages/.gitkeep
+!packages/readme.md
+host/composer.lock
