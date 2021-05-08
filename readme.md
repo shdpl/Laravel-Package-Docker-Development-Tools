@@ -47,6 +47,21 @@ After:
 }
 ```
 
+Example with 2 packages
+
+```json
+   "repositories": {
+        "escolalms/headless-h5p": {
+            "type": "path",
+            "url": "../packages/headless-h5p"
+        },
+        "escolalms/courses": {
+            "type": "path",
+            "url": "../packages/courses"
+        }
+    }
+```
+
 Note that name (`escolalms/headless-h5p` in example above) **MUST** match one you have in `package/composer.json`
 
 3. Enter bash (instruction above), then add you packge with `composer require escolalms/headless-h5p`

@@ -19,7 +19,8 @@ class CourseApiTest extends TestCase
 
         $this->response = $this->json(
             'POST',
-            '/api/courses', $course
+            '/api/courses',
+            $course
         );
 
         $this->assertApiResponse($course);
@@ -66,8 +67,8 @@ class CourseApiTest extends TestCase
 
         $this->response = $this->json(
             'DELETE',
-             '/api/courses/'.$course->id
-         );
+            '/api/courses/'.$course->id
+        );
 
         $this->assertApiSuccess();
         $this->response = $this->json(
