@@ -1,7 +1,16 @@
 <?php
 
 /**
- * @OA\Info(title="Escola LMS API", version="0.0.1")
+ * @OA\Info(title="EscolaLMS", version="0.0.1")
+ *
+ * @OA\SecurityScheme(
+ *      securityScheme="passport",
+ *      in="header",
+ *      name="bearerAuth",
+ *      type="http",
+ *      scheme="bearer",
+ *      bearerFormat="JWT",
+ * )
  */
 
 namespace App\Providers;
