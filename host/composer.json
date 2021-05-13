@@ -10,8 +10,6 @@
     "require": {
         "php": "^7.3|^8.0",
         "darkaonline/l5-swagger": "^8.0",
-        "escolalms/courses": "dev-master",
-        "escolalms/headless-h5p": "dev-master",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -62,15 +60,5 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    },
-    "repositories": {
-        "escolalms/headless-h5p": {
-            "type": "path",
-            "url": "../packages/headless-h5p"
-        },
-        "escolalms/courses": {
-            "type": "path",
-            "url": "../packages/courses"
-        }
     }
 }
