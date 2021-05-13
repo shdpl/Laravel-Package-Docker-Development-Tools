@@ -27,42 +27,11 @@ Repeat those steps for each package
 
 1. Clone your package to a folder inside this repo, in `packages` folder (`git clone XXX package`). Add your folder to `.gitignore`
 
-2. Amend Host Laravel `host/composer.json`
-
-Before:
-
-```json
-"repositories": {
-}
+2. Amend Host Laravel `host/composer.json` to point to freshly cloned package repository.
+Assuming your package name is _escolalms/packagename_, it can be done by invoking following command from within the container:
+```sh
+composer config repositories.escolalms/packagename '{ "type": "path", "url": "../packages/packagename" }'
 ```
-
-After:
-
-```json
-"repositories": {
-    "escolalms/headless-h5p": {
-        "type": "path",
-        "url": "../packages/headless-h5p"
-    }
-}
-```
-
-Example with 2 packages
-
-```json
-   "repositories": {
-        "escolalms/headless-h5p": {
-            "type": "path",
-            "url": "../packages/headless-h5p"
-        },
-        "escolalms/courses": {
-            "type": "path",
-            "url": "../packages/courses"
-        }
-    }
-```
-
-Note that name (`escolalms/headless-h5p` in example above) **MUST** match one you have in `package/composer.json`
 
 2.1. (Optional)
 In case you'll be generating your own swagger documentation you might want to alter `host/config/l5-swagger.php` as follows:
