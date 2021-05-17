@@ -1,4 +1,4 @@
 packages/*
 !packages/.gitkeep
 !packages/readme.md
-host/composer.lock
+host/storage/api-docs/api-docs.json

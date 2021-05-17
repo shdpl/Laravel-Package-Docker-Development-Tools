@@ -33,6 +33,26 @@ Assuming your package name is _escolalms/packagename_, it can be done by invokin
 composer config repositories.escolalms/packagename '{ "type": "path", "url": "../packages/packagename" }'
 ```
 
+2.1. (Optional)
+In case you'll be generating your own swagger documentation you might want to alter `host/config/l5-swagger.php` as follows:
+
+Before:
+```
+'annotations' => [
+               base_path('vendor/escolalms/headless-h5p/src'),
+               //base_path('app')
+],
+```
+After:
+```
+'annotations' => [
+               base_path('vendor/escolalms/packagename/src'),
+               //base_path('app')
+],
+```
+Above example is assuming that your package name is `packagename`.
+
+
 3. Enter bash (instruction above), then add you packge with `composer require escolalms/headless-h5p`
 
 That's it - now you have laravel working with docker that is using package from other folder that is `git` maintained.
